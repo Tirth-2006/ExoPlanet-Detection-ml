@@ -3,77 +3,96 @@
 This project explores detecting **exoplanets** using machine learning techniques applied to **stellar light curve data**.
 
 When a planet passes in front of a star, the brightness of the star slightly decreases.
-This event is called a **transit**. By analyzing these small dips in brightness, machine learning models can identify potential exoplanets.
+This phenomenon is called a **transit**. By analyzing these brightness dips, machine learning models can identify potential exoplanets.
 
 ---
 
-## Project Objective
+# Project Objective
 
-The goal of this project is to build a **machine learning pipeline** capable of detecting potential exoplanets by analyzing patterns in stellar brightness data.
+The goal of this project is to build a **machine learning pipeline** capable of detecting potential exoplanets by analyzing patterns in stellar brightness measurements.
 
-The project focuses on:
+The project demonstrates:
 
-* Data preprocessing
-* Feature preparation
-* Model training
-* Model evaluation
-* Prediction of potential exoplanets
-
----
-
-## Dataset
-
-The project uses **light curve data** similar to datasets collected by space telescopes such as:
-
-* NASA **Kepler Mission**
-* NASA **TESS Mission**
-
-A **light curve** represents how the brightness of a star changes over time.
-
-If a planet crosses in front of the star, the brightness slightly dips. These dips can be detected and analyzed using machine learning models.
+• Data preprocessing
+• Feature preparation
+• Model training
+• Model evaluation
+• Light curve visualization
+• Prediction of potential exoplanets
 
 ---
 
-## Machine Learning Pipeline
+# Dataset
 
-The notebook follows a structured pipeline:
+The project uses **stellar light curve data**, similar to data collected by space telescopes such as:
 
-1. Load and explore the dataset
-2. Data preprocessing and cleaning
-3. Feature preparation
-4. Train machine learning models
-5. Evaluate model performance
-6. Predict potential exoplanet candidates
+• **NASA Kepler Mission**
+• **NASA TESS Mission**
 
----
+A **light curve** represents the brightness of a star measured over time.
 
-## Technologies Used
-
-* Python
-* NumPy
-* Pandas
-* Scikit-learn
-* XGBoost
-* Matplotlib
-* Seaborn
+If a planet passes between the star and the telescope, a small **dip in brightness** appears in the light curve. Machine learning algorithms can detect these patterns and classify potential planetary signals.
 
 ---
 
-## Project Structure
+# Machine Learning Pipeline
 
-```
-ExoPlanet-Detection-ml
-│
-├── exoplanet_detection_pipeline.ipynb   # Main ML notebook
-├── requirements.txt                     # Python dependencies
-├── README.md                            # Project documentation
-├── LICENSE
-└── .gitignore
-```
+The notebook follows a structured workflow:
+
+1. Load dataset
+2. Data exploration
+3. Data preprocessing
+4. Feature preparation
+5. Train machine learning models
+6. Evaluate model performance
+7. Visualize stellar light curves
+8. Predict potential exoplanet signals
 
 ---
 
-## Installation
+# Model
+
+This project uses a **classical machine learning classifier (XGBoost)** to classify whether a stellar light curve corresponds to a potential exoplanet transit.
+
+The model is trained on brightness time-series data extracted from light curves.
+
+---
+
+# Results
+
+The model is evaluated using standard classification metrics:
+
+• Accuracy
+• Precision
+• Recall
+• Confusion Matrix
+
+These metrics help assess the model's ability to correctly detect planetary transit signals.
+
+---
+
+## Example Light Curve
+
+Example brightness curve of a star over time.
+
+![Example Stellar Light Curve](lightcurve.png)
+
+This plot represents stellar brightness over time, where dips may indicate the presence of an exoplanet.
+---
+
+# Technologies Used
+
+Python
+NumPy
+Pandas
+Scikit-learn
+XGBoost
+Matplotlib
+Seaborn
+
+---
+
+# Installation
 
 Clone the repository:
 
@@ -81,13 +100,13 @@ Clone the repository:
 git clone https://github.com/Tirth-2006/ExoPlanet-Detection-ml.git
 ```
 
-Move into the project folder:
+Navigate into the project directory:
 
 ```
 cd ExoPlanet-Detection-ml
 ```
 
-Install required libraries:
+Install dependencies:
 
 ```
 pip install -r requirements.txt
@@ -99,37 +118,48 @@ Run the notebook:
 jupyter notebook
 ```
 
----
+Open the notebook file:
 
-## Results
-
-The machine learning model is trained to classify whether a light curve corresponds to a potential **exoplanet transit**.
-
-Evaluation metrics used include:
-
-* Accuracy
-* Precision
-* Recall
-* Confusion Matrix
-
-These metrics help assess the model's ability to correctly identify planetary signals.
+```
+exoplanet_detection_pipeline.ipynb
+```
 
 ---
 
-## Future Improvements
+# Project Structure
 
-Possible improvements for the project include:
-
-* Better feature engineering from light curves
-* Hyperparameter optimization
-* Deep learning models for time-series analysis
-* Larger datasets from Kepler or TESS missions
-* Automated transit detection algorithms
+```
+ExoPlanet-Detection-ml
+│
+├── exoplanet_detection_pipeline.ipynb
+├── requirements.txt
+├── README.md
+├── LICENSE
+└── .gitignore
+```
 
 ---
 
-## Author
+# Future Improvements
+
+Possible extensions of this project include:
+
+• Feature engineering for improved transit detection
+• Hyperparameter tuning of machine learning models
+• Deep learning models for time-series analysis
+• Larger datasets from Kepler or TESS missions
+• Automated transit detection pipelines
+
+---
+
+# Author
 
 **Tirth**
 
-Machine learning enthusiast exploring scientific applications of AI.
+Machine Learning enthusiast exploring scientific applications of AI and data analysis.
+
+---
+
+# Acknowledgements
+
+Inspired by research in **astronomy and exoplanet detection** using data from missions such as **NASA Kepler and TESS**.
