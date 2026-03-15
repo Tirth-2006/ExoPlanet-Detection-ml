@@ -42,6 +42,17 @@ The model learns to detect these transit patterns.
 
 Build a machine learning pipeline capable of identifying candidate exoplanets from light curve datasets such as those from **Kepler** or **TESS** missions.
 
+## Model
+
+The project trains a classical machine learning classifier (XGBoost)
+to identify potential exoplanets from light curve features.
+
+## Results
+
+Accuracy: XX%
+Precision: XX%
+Recall: XX%
+
 ## Future Improvements
 
 - Better feature engineering
