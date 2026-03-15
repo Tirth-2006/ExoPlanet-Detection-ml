@@ -1,3 +1,6 @@
+
+
+
 # Exoplanet Detection using Machine Learning
 
 This project explores detecting exoplanets from stellar light curve data using machine learning techniques.
@@ -9,6 +12,15 @@ This phenomenon is called a **transit**.
 
 By analyzing light curve data, machine learning models can identify patterns that indicate potential exoplanets.
 
+## Dataset
+
+This project uses light curve data from the NASA Kepler mission.
+
+The dataset contains brightness measurements of stars over time.
+If a planet passes in front of the star, the brightness dips slightly,
+which is called a transit.
+
+The model learns to detect these transit patterns.
 ## Pipeline
 
 1. Data loading
