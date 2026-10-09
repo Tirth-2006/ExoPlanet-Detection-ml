@@ -413,3 +413,30 @@ plt.ylabel("Brightness")
 plt.tight_layout()
 plt.savefig(PLOT_DIR / "example_light_curve.png", dpi=150, bbox_inches="tight")
 plt.close()
+
+# %%
+def predict_from_user_input(model, features):
+    print("\nEnter one value for each feature in this order:")
+    for feature in features.columns:
+        print(
+            f"{feature}: "
+            f"{features[feature].min():.6g} to {features[feature].max():.6g}"
+        )
+
+    values_text = input(
+        "\nEnter the feature values as comma-separated numbers: "
+    )
+    values = [float(value.strip()) for value in values_text.split(",")]
+
+    if len(values) != len(features.columns):
+        raise ValueError(
+            f"Expected {len(features.columns)} values, "
+            f"but received {len(values)}."
+        )
+
+    user_features = pd.DataFrame([values], columns=features.columns)
+    prediction = model.predict(user_features)[0]
+    print("Planet exists" if prediction == 1 else "Planet does not exist")
+
+
+predict_from_user_input(xgb_model, X)

@@ -112,17 +112,16 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-Run the notebook:
+The project now runs as a Python script:
 
 ```
-jupyter notebook
+python exoplanet_detection_pipeline.py
 ```
 
-Open the notebook file:
-
-```
-exoplanet_detection_pipeline.ipynb
-```
+At the end of the run, the script prints the valid range for every model
+feature. Enter one comma-separated value for each feature in the displayed
+order. The script then prints either `Planet exists` or `Planet does not
+exist`.
 
 ---
 
@@ -131,7 +130,7 @@ exoplanet_detection_pipeline.ipynb
 ```
 ExoPlanet-Detection-ml
 │
-├── exoplanet_detection_pipeline.ipynb
+├── exoplanet_detection_pipeline.py
 ├── requirements.txt
 ├── README.md
 ├── LICENSE
