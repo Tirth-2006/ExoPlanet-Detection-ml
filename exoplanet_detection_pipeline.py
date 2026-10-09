@@ -416,23 +416,25 @@ plt.close()
 
 # %%
 def predict_from_user_input(model, features):
-    print("\nEnter one value for each feature in this order:")
+    print("\nEnter one value for each feature:")
+    values = []
     for feature in features.columns:
-        print(
-            f"{feature}: "
-            f"{features[feature].min():.6g} to {features[feature].max():.6g}"
+        minimum = features[feature].min()
+        maximum = features[feature].max()
+        value_text = input(
+            f"{feature} (range: {minimum:.6g} to {maximum:.6g}): "
         )
-
-    values_text = input(
-        "\nEnter the feature values as comma-separated numbers: "
-    )
-    values = [float(value.strip()) for value in values_text.split(",")]
-
-    if len(values) != len(features.columns):
-        raise ValueError(
-            f"Expected {len(features.columns)} values, "
-            f"but received {len(values)}."
-        )
+        try:
+            value = float(value_text.strip())
+        except ValueError as error:
+            raise ValueError(
+                f"{feature} must be a numeric value."
+            ) from error
+        if not minimum <= value <= maximum:
+            raise ValueError(
+                f"{feature} must be between {minimum:.6g} and {maximum:.6g}."
+            )
+        values.append(value)
 
     user_features = pd.DataFrame([values], columns=features.columns)
     prediction = model.predict(user_features)[0]

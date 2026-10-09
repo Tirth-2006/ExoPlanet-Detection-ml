@@ -118,10 +118,9 @@ The project now runs as a Python script:
 python exoplanet_detection_pipeline.py
 ```
 
-At the end of the run, the script prints the valid range for every model
-feature. Enter one comma-separated value for each feature in the displayed
-order. The script then prints either `Planet exists` or `Planet does not
-exist`.
+At the end of the run, the script asks for each model feature one at a time
+and displays its valid range in the prompt. The script then prints either
+`Planet exists` or `Planet does not exist`.
 
 ---
 
